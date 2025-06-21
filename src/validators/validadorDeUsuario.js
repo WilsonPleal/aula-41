@@ -1,4 +1,5 @@
 const z = require("zod");
+const { default: errorMap } = require("zod/locales/en.js");
 
 const EsquemaDeUsuario = z.object({
   nome: z
@@ -22,6 +23,7 @@ function validadorDeUsuario(dados) {
   const validacao = EsquemaDeUsuario.safeParse(dados);
 
   if (!validacao.success) {
+    console.error(validacao.error.format())
     return { error: validacao.error.format() };
   }
 

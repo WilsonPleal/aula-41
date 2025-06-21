@@ -1,3 +1,4 @@
+const { HttpError } = require("../errors/HttpError");
 const servicoDeUsuario = require("../services/servicoDeUsuario");
 const validadorDeUsuario = require("../validators/validadorDeUsuario");
 

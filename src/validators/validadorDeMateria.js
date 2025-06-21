@@ -15,6 +15,7 @@ function validadorDeMateria(dados) {
   const validacao = EsquemaDeMateria.safeParse(dados);
 
   if (!validacao.success) {
+    console.error(validacao.error.format())
     return { error: validacao.error.format() };
   }
 
